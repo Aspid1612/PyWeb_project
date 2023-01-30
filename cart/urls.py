@@ -1,7 +1,10 @@
 from django.urls import path
-from .views import Random_View
+from .views import view_cart
 
-
+app_name = 'cart'
 urlpatterns = [
-    path('randint/', Random_View.as_view())
+    path('', views.view_cart, name = 'view_cart'),
+    path('update_item/<int:item_id>/', views.update_item, name='update_item'),
+    path('remove_item/<int:item_id>/', views.remove_item, name='remove_item'),
+    path('checkout/', views.checkout, name='checkout'),
     ]
