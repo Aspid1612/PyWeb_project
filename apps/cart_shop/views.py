@@ -86,11 +86,7 @@ class ViewWishlistAdd(View):
             product = get_object_or_404(Product, id=product_id)
             wishlist_user = get_object_or_404(Cart, user=request.user)
             wishlist_items = WishList(wishlist=wishlist_user, product=product)
-            if wishlist_items.quantity > 1:
-                pass
-            else:
-                wishlist_items.save()
-
+            wishlist_items.save()
             return redirect('home:index')
         else:
             return redirect('auth_shop:login')

@@ -172,9 +172,11 @@
 	    							<a href="{% url 'cart_shop:buy' product.id %}" class="buy-now d-flex justify-content-center align-items-center mx-1">
 	    								<span><i class="ion-ios-cart"></i></span>
 	    							</a>
+											{% if product.name not in wishlist_items %}
 	    							<a href="{% url 'cart_shop:add_to_wishlist' product.id %}" class="heart d-flex justify-content-center align-items-center ">
-	    								<span><i class="ion-ios-heart"></i></span>
+										<span><i class="ion-ios-heart"></i></span>
 	    							</a>
+											{% endif %}
     							</div>
     						</div>
     					</div>

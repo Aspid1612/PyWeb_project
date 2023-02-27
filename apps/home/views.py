@@ -19,7 +19,6 @@ class IndexShopView(View):
                        }
 
 
-
             return render(request, 'home/index.html', context)
         else:
             context = {'data': data}
