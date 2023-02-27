@@ -75,7 +75,7 @@ class ViewWishlist(View):
             wishlist_items = WishList.objects.filter(wishlist__user=request.user)
             data = list(wishlist_items)
             total_price = sum(item.product.price * item.quantity for item in data)
-            context = {' wishlist_items': data, 'total_price': total_price}
+            context = {'wishlist_items': data, 'total_price': total_price}
             return render(request, 'cart_shop/wishlist.html', context)
         return redirect('auth_shop:login')
 
